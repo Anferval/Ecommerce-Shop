@@ -18,7 +18,7 @@ Puedes ver el proyecto en línea en [http://shop.andre-abt.com](http://shop.andr
 
 2. **Instalar paquetes NPM**
     ```bash
-    npm install
+    npm install --legacy-peer-deps
     ```
 
 3. **Ejecutar el servidor de desarrollo**
