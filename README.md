@@ -97,16 +97,5 @@ ng build --prod --build-optimizer
 - Funcionalidad de búsqueda por escritura anticipada.
 - Actualización de datos en tiempo real mediante Firebase y RxJs.
 
-## Backend Personalizado de Express/MongoDB
 
-El proyecto comenzó con una arquitectura MEAN personalizada, pero se cambió a Firebase por varias razones, incluidas las restricciones de red y el alcance del proyecto.
-
-## Características y Actualizaciones Futuras
-- Acelerar la carga inicial de la página con una página de inicio renderizada en el servidor y/o módulos de carga diferida.
-- Mejorar el SEO con Angular Universal.
-- Implementar categorías de productos, cantidades de stock y una mejor solución para tablas responsivas.
-- Agregar funcionalidad de recuperación de contraseñas y soporte para múltiples imágenes de productos.
-- Implementar gestión de estado (por ejemplo, NgRx) y funcionalidad de compartir en redes sociales.
-- Integrar pasarelas de pago reales y soporte multilingüe.
-- Mejorar la gestión de roles de usuario a través de la interfaz en lugar de solo Firebase.
 
