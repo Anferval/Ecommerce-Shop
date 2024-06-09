@@ -1,30 +1,8 @@
-/*!
- * modernizr v3.6.0
- * Build https://modernizr.com/download?-MessageChannel-adownload-ambientlight-animation-apng-appearance-applicationcache-audio-audioloop-audiopreload-backdropfilter-backgroundblendmode-backgroundcliptext-backgroundsize-batteryapi-bdi-beacon-bgpositionshorthand-bgpositionxy-bgrepeatspace_bgrepeatround-bgsizecover-blobconstructor-bloburls-blobworkers-borderimage-borderradius-boxshadow-boxsizing-canvas-canvasblending-canvastext-canvaswinding-capture-checked-classlist-contains-contenteditable-contextmenu-cookies-cors-createelementattrs_createelement_attrs-cryptography-cssall-cssanimations-csscalc-csschunit-csscolumns-cssescape-cssexunit-cssfilters-cssgradients-cssgrid_cssgridlegacy-csshyphens_softhyphens_softhyphensfind-cssinvalid-cssmask-csspointerevents-csspositionsticky-csspseudoanimations-csspseudotransitions-cssreflections-cssremunit-cssresize-cssscrollbar-csstransforms-csstransforms3d-csstransformslevel2-csstransitions-cssvalid-cssvhunit-cssvmaxunit-cssvminunit-cssvwunit-cubicbezierrange-customelements-customevent-customprotocolhandler-dart-datachannel-datalistelem-dataset-datauri-dataview-dataworkers-details-devicemotion_deviceorientation-directory-display_runin-displaytable-documentfragment-ellipsis-emoji-es5-es5array-es5date-es5function-es5object-es5string-es5syntax-es5undefined-es6array-es6collections-es6math-es6number-es6object-es6string-eventlistener-eventsource-exiforientation-fetch-fileinput-filereader-filesystem-flash-flexbox-flexboxlegacy-flexboxtweener-flexwrap-fontface-formattribute-formvalidation-framed-fullscreen-gamepads-generatedcontent-generators-geolocation-getrandomvalues-getusermedia-hairline-hashchange-hidden-hiddenscroll-history-hovermq-hsla-htmlimports-ie8compat-imgcrossorigin-indexeddb-indexeddbblob-inlinesvg-input-inputformaction-inputformenctype-inputformmethod-inputformtarget-inputtypes-intl-jpeg2000-jpegxr-json-lastchild-ligatures-localizednumber-localstorage-lowbandwidth-lowbattery-mathml-mediaqueries-microdata-multiplebgs-mutationobserver-notification-nthchild-objectfit-olreversed-oninput-opacity-outputelem-overflowscrolling-pagevisibility-passiveeventlisteners-peerconnection-performance-picture-placeholder-pointerevents-pointerlock-pointermq-postmessage-preserve3d-progressbar_meter-promises-proximity-queryselector-quotamanagement-regions-requestanimationframe-requestautocomplete-rgba-ruby-sandbox-scriptasync-scriptdefer-scrollsnappoints-seamless-search-serviceworker-sessionstorage-shapes-sharedworkers-siblinggeneral-sizes-smil-speechrecognition-speechsynthesis-srcdoc-srcset-strictmode-stylescoped-subpixelfont-supports-svg-svgasimg-svgclippaths-svgfilters-svgforeignobject-target-template-templatestrings-textalignlast-textareamaxlength-textshadow-texttrackapi_track-time-todataurljpeg_todataurlpng_todataurlwebp-touchevents-transferables-typedarrays-unicode-unicoderange-unknownelements-urlparser-urlsearchparams-userdata-userselect-variablefonts-vibrate-video-videoautoplay-videocrossorigin-videoloop-videopreload-vml-webaudio-webgl-webglextensions-webintents-webp-webpalpha-webpanimation-webplossless_webp_lossless-websockets-websocketsbinary-websqldatabase-webworkers-willchange-wrapflow-xdomainrequest-xhr2-xhrresponsetype-xhrresponsetypearraybuffer-xhrresponsetypeblob-xhrresponsetypedocument-xhrresponsetypejson-xhrresponsetypetext-addtest-atrule-domprefixes-hasevent-load-mq-prefixed-prefixedcss-prefixes-printshiv-setclasses-testallprops-testprop-teststyles-dontmin
- *
- * Copyright (c)
- *  Faruk Ates
- *  Paul Irish
- *  Alex Sexton
- *  Ryan Seddon
- *  Patrick Kettner
- *  Stu Cox
- *  Richard Herrera
 
- * MIT License
- */
-
-/*
- * Modernizr tests which native CSS3 and HTML5 features are available in the
- * current UA and makes the results available to you in two ways: as properties on
- * a global `Modernizr` object, and as classes on the `<html>` element. This
- * information allows you to progressively enhance your pages with a granular level
- * of control over the experience.
-*/
 
 ;(function(window, document, undefined){
   var tests = [];
-  
+
 
   /**
    *
@@ -52,12 +30,7 @@
 
     // Stub these for people who are listening
     on: function(test, cb) {
-      // I don't really think people should do this, but we can
-      // safe guard it a bit.
-      // -- NOTE:: this gets WAY overridden in src/addTest for actual async tests.
-      // This is in case people listen to synchronous tests. I would leave it out,
-      // but the code to *disallow* sync tests in the real version of this
-      // function is actually larger than this.
+
       var self = this;
       setTimeout(function() {
         cb(self[test]);
@@ -73,20 +46,19 @@
     }
   };
 
-  
 
-  // Fake some of Object.create so we can force non test results to be non "own" properties.
+
+
   var Modernizr = function() {};
   Modernizr.prototype = ModernizrProto;
 
-  // Leak modernizr globally when you `require` it rather than force it here.
-  // Overwrite name so constructor name is nicer :D
+
   Modernizr = new Modernizr();
 
-  
+
 
   var classes = [];
-  
+
 
   /**
    * is returns a boolean if the typeof an obj is exactly type.
@@ -122,13 +94,7 @@
       if (tests.hasOwnProperty(featureIdx)) {
         featureNames = [];
         feature = tests[featureIdx];
-        // run the test, throw the return value into the Modernizr,
-        // then based on that boolean, define an appropriate className
-        // and push it into an array of classes we'll join later.
-        //
-        // If there is no name, it's an 'async' test that is run,
-        // but not directly added to the object. That should
-        // be done with a post-run addTest call.
+
         if (feature.name) {
           featureNames.push(feature.name.toLowerCase());
 
@@ -147,12 +113,7 @@
         // Set each of the names on the Modernizr object
         for (nameIdx = 0; nameIdx < featureNames.length; nameIdx++) {
           featureName = featureNames[nameIdx];
-          // Support dot properties as sub tests. We don't do checking to make sure
-          // that the implied parent tests have been added. You must call them in
-          // order (either in the test, or make the parent test a dependency).
-          //
-          // Cap it to TWO to make the logic simple and because who needs that kind of subtesting
-          // hashtag famous last words
+
           featureNameSplit = featureName.split('.');
 
           if (featureNameSplit.length === 1) {
@@ -173,33 +134,16 @@
   }
   ;
 
-  /**
-   * docElement is a convenience wrapper to grab the root element of the document
-   *
-   * @access private
-   * @returns {HTMLElement|SVGElement} The root element of the document
-   */
+
 
   var docElement = document.documentElement;
-  
 
-  /**
-   * A convenience helper to check if the document we are running in is an SVG document
-   *
-   * @access private
-   * @returns {boolean}
-   */
+
+
 
   var isSVG = docElement.nodeName.toLowerCase() === 'svg';
-  
 
-  /**
-   * setClasses takes an array of class names and adds them to the root element
-   *
-   * @access private
-   * @function setClasses
-   * @param {string[]} classes - Array of class names
-   */
+
 
   // Pass in an and array of class names, e.g.:
   //  ['no-webp', 'borderradius', ...]
@@ -263,35 +207,12 @@
     }
   })();
 
-  
+
 
 
    // _l tracks listeners for async tests, as well as tests that execute after the initial run
   ModernizrProto._l = {};
 
-  /**
-   * Modernizr.on is a way to listen for the completion of async tests. Being
-   * asynchronous, they may not finish before your scripts run. As a result you
-   * will get a possibly false negative `undefined` value.
-   *
-   * @memberof Modernizr
-   * @name Modernizr.on
-   * @access public
-   * @function on
-   * @param {string} feature - String name of the feature detect
-   * @param {function} cb - Callback function returning a Boolean - true if feature is supported, false if not
-   * @example
-   *
-   * ```js
-   * Modernizr.on('flash', function( result ) {
-   *   if (result) {
-   *    // the browser has flash
-   *   } else {
-   *     // the browser does not have flash
-   *   }
-   * });
-   * ```
-   */
 
   ModernizrProto.on = function(feature, cb) {
     // Create the list of listeners if it doesn't exist
@@ -311,18 +232,6 @@
     }
   };
 
-  /**
-   * _trigger is the private function used to signal test completion and run any
-   * callbacks registered through [Modernizr.on](#modernizr-on)
-   *
-   * @memberof Modernizr
-   * @name Modernizr._trigger
-   * @access private
-   * @function _trigger
-   * @param {string} feature - string name of the feature detect
-   * @param {function|boolean} [res] - A feature detection function, or the boolean =
-   * result of a feature detection function
-   */
 
   ModernizrProto._trigger = function(feature, res) {
     if (!this._l[feature]) {
@@ -470,7 +379,7 @@
     ModernizrProto.addTest = addTest;
   });
 
-  
+
 
 
   /**
@@ -490,11 +399,11 @@
    */
 
   var omPrefixes = 'Moz O ms Webkit';
-  
+
 
   var cssomPrefixes = (ModernizrProto._config.usePrefixes ? omPrefixes.split(' ') : []);
   ModernizrProto._cssomPrefixes = cssomPrefixes;
-  
+
 
   /**
    * atRule returns a given CSS property at-rule (eg @keyframes), possibly in
@@ -561,7 +470,7 @@
 
   ModernizrProto.atRule = atRule;
 
-  
+
 
   /**
    * List of JavaScript DOM values used for tests
@@ -583,7 +492,7 @@
 
   var domPrefixes = (ModernizrProto._config.usePrefixes ? omPrefixes.toLowerCase().split(' ') : []);
   ModernizrProto._domPrefixes = domPrefixes;
-  
+
 
   /**
    * createElement is a convenience wrapper around document.createElement. Since we
@@ -684,7 +593,7 @@
 
 
   ModernizrProto.hasEvent = hasEvent;
-  
+
 
 /**
   * @optionName html5printshiv
@@ -1433,7 +1342,7 @@
 
   ModernizrProto.mq = mq;
 
-  
+
 
 
   /**
@@ -1467,7 +1376,7 @@
     delete modElem.elem;
   });
 
-  
+
 
   var mStyle = {
     style: modElem.elem.style
@@ -1479,7 +1388,7 @@
     delete mStyle.style;
   });
 
-  
+
 
   /**
    * domToCSS takes a camelCase string and converts it to kebab-case
@@ -1783,7 +1692,7 @@
   // Modernizr.testAllProps('boxSizing')
   ModernizrProto.testAllProps = testPropsAll;
 
-  
+
 
   /**
    * prefixed returns the prefixed or nonprefixed property name variant of your input
@@ -1867,7 +1776,7 @@
     }
   };
 
-  
+
 
   /**
    * List of property values to set for css tests. See ticket #21
@@ -1908,7 +1817,7 @@
   // expose these for the plugin API. Look in the source for how to join() them against your input
   ModernizrProto._prefixes = prefixes;
 
-  
+
 
   /**
    * prefixedCSS is just like [prefixed](#modernizr-prefixed), but the returned values are in
@@ -1942,7 +1851,7 @@
     var prefixedProp = prefixed(prop);
     return prefixedProp && domToCSS(prefixedProp);
   };
-  
+
 
   /**
    * testAllProps determines whether a given CSS property is supported in the browser
@@ -1985,7 +1894,7 @@
     return testPropsAll(prop, undefined, undefined, value, skipValueTest);
   }
   ModernizrProto.testAllProps = testAllProps;
-  
+
 
   /**
    * testProp() investigates whether a given style property is recognized
@@ -2024,7 +1933,7 @@
   var testProp = ModernizrProto.testProp = function(prop, value, useValue) {
     return testProps([prop], undefined, value, useValue);
   };
-  
+
 
   /**
    * testStyles injects an element with style element and some CSS rules
@@ -2084,7 +1993,7 @@
    */
 
   var testStyles = ModernizrProto.testStyles = injectElementWithStyles;
-  
+
 /*!
 {
   "name": "a[download] Attribute",
@@ -5161,7 +5070,7 @@ Detect support for the bdi element, a way to have text that is isolated from its
    * @returns {HTMLInputElement}
    */
   var inputElem = createElement('input');
-  
+
 /*!
 {
   "name": "Input attributes",
@@ -7896,7 +7805,7 @@ Tests for XMLHttpRequest xhr.responseType.
     return 'response' in xhr && xhr.responseType == type;
   };
 
-  
+
 /*!
 {
   "name": "XHR responseType='arraybuffer'",
@@ -8570,7 +8479,7 @@ Detects support for SVG in `<embed>` or `<object>` elements.
    */
 
   var toStringFn = ({}).toString;
-  
+
 /*!
 {
   "name": "SVG clip paths",

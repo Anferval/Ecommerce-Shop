@@ -7,7 +7,7 @@ Este proyecto es una implementación de un frontend de tienda basado en una Apli
 ## Contribuidor
 - Andrés Fernando Valbuena González
 
-Puedes ver el proyecto en línea en [http://shop.andre-abt.com](http://shop.andre-abt.com). Nota: Las imágenes pixeladas de los productos se usan debido a razones de licenciamiento de imágenes.
+Nota: Las imágenes pixeladas de los productos se usan debido a razones de licenciamiento de imágenes.
 
 ## Instalación
 
@@ -29,7 +29,7 @@ Puedes ver el proyecto en línea en [http://shop.andre-abt.com](http://shop.andr
 
 ## Verificar la Tienda
 
-Dirige tu navegador a [http://localhost:4200](http://localhost:4200). Si la compilación de desarrollo no funciona, puedes ver la aplicación ya construida en [http://shop.andre-abt.com](http://shop.andre-abt.com). El enrutamiento profundo para el router de Angular se maneja mediante una configuración `.htaccess`.
+Dirige tu navegador a [http://localhost:4200](http://localhost:4200).
 
 ## Compilar la Aplicación para Producción
 
