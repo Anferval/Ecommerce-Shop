@@ -37,7 +37,7 @@ Para compilar la aplicación para el entorno de producción:
 
 ```bash
 ng build --prod --build-optimizer
-
+```
 
 Conjunto de Funcionalidades
 Funcionalidad de la Tienda
