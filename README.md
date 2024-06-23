@@ -2,7 +2,7 @@
 
 ## Descripción General
 
-Este proyecto es una implementación de un frontend de tienda basado en una Aplicación de Página Única (SPA) construida con Angular 14.2.4. El proyecto se concibió inicialmente para crear una experiencia de compra fluida manejando la mayoría de las interacciones del lado del cliente.
+La aplicación Ecommerce-Shop es una plataforma de venta de ropa en línea diseñada como una Aplicación de Página Única (SPA) utilizando Angular 14.2.4. Esta aplicación ofrece una experiencia de compra fluida y eficiente, permitiendo a los usuarios navegar por productos destacados, nuevas llegadas, artículos en oferta y mejor calificados. Los productos se obtienen del backend de Firebase y se almacenan en caché para mejorar la velocidad de las futuras solicitudes. La funcionalidad de la tienda incluye un carrito de compras interactivo, opciones de calificación de productos, autenticación de usuarios, y un proceso de compra optimizado con opciones de pago a través de PayPal. Además, ofrece características avanzadas como CRUD de productos para administradores, seguridad robusta mediante reglas de Firebase, y actualización en tiempo real de datos utilizando Firebase y RxJs. La combinación de estas características diferenciales proporciona una experiencia de usuario única y personalizada, superando a otras aplicaciones de venta de ropa en términos de funcionalidad y eficiencia.
 
 ## Contribuidor
 - Andrés Fernando Valbuena González
